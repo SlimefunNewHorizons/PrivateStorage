@@ -1,17 +1,17 @@
-package com.github.drakescraft_labs.privatestorage.storage;
+package io.github.thebusybiscuit.privatestorage.storage;
 
 import org.bukkit.Material;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.ItemStack;
 
-import com.github.drakescraft_labs.privatestorage.ChestProtectionLevel;
-import com.github.drakescraft_labs.privatestorage.PrivateStorage;
-import com.github.drakescraft_labs.privatestorage.SlimefunChest;
-import com.github.drakescraft_labs.slimefun4.api.items.ItemGroup;
-import com.github.drakescraft_labs.slimefun4.api.items.SlimefunItemStack;
-import com.github.drakescraft_labs.slimefun4.api.recipes.RecipeType;
-import com.github.drakescraft_labs.slimefun4.api.researches.Research;
-import com.github.drakescraft_labs.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.privatestorage.ChestProtectionLevel;
+import io.github.thebusybiscuit.privatestorage.PrivateStorage;
+import io.github.thebusybiscuit.privatestorage.SlimefunChest;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
+import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
+import io.github.thebusybiscuit.slimefun4.api.researches.Research;
+import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
 
 public class PublicChests {
     

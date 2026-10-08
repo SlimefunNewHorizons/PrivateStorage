@@ -1,17 +1,17 @@
-package com.github.drakescraft_labs.privatestorage;
+package io.github.thebusybiscuit.privatestorage;
 
 import org.bstats.bukkit.Metrics;
 import org.bukkit.NamespacedKey;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.drakescraft_labs.privatestorage.storage.PrivateChests;
-import com.github.drakescraft_labs.privatestorage.storage.PublicChests;
-import com.github.drakescraft_labs.slimefun4.api.items.ItemGroup;
-import com.github.drakescraft_labs.slimefun4.api.SlimefunAddon;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.config.Config;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.items.CustomItemStack;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.skins.PlayerHead;
-import com.github.drakescraft_labs.slimefun4.libraries.dough.skins.PlayerSkin;
+import io.github.thebusybiscuit.privatestorage.storage.PrivateChests;
+import io.github.thebusybiscuit.privatestorage.storage.PublicChests;
+import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
+import io.github.thebusybiscuit.slimefun4.api.SlimefunAddon;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.config.Config;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.items.CustomItemStack;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerHead;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.skins.PlayerSkin;
 
 public class PrivateStorage extends JavaPlugin implements SlimefunAddon {
 
@@ -35,6 +35,6 @@ public class PrivateStorage extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/DrakesCraft-Labs/PrivateStorage/issues";
+        return "https://github.com/TheBusyBiscuit/PrivateStorage/issues";
     }
 }
