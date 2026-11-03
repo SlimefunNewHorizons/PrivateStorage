@@ -35,6 +35,6 @@ public class PrivateStorage extends JavaPlugin implements SlimefunAddon {
 
     @Override
     public String getBugTrackerURL() {
-        return "https://github.com/DrakesCraft-Labs/PrivateStorage/issues";
+        return "https://github.com/SlimefunNewHorizons/PrivateStorage/issues";
     }
 }
