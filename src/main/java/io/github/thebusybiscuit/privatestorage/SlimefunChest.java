@@ -1,13 +1,18 @@
 package io.github.thebusybiscuit.privatestorage;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+import java.util.UUID;
 
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
+import org.bukkit.entity.HumanEntity;
 import org.bukkit.entity.Player;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 
 import me.mrCookieSlime.Slimefun.api.item_transport.ItemTransportFlow;
@@ -47,7 +52,7 @@ public class SlimefunChest extends SlimefunItem {
 
                 switch (level) {
                     case PRIVATE:
-                        return BlockStorage.getLocationInfo(b.getLocation(), "owner").equals(p.getUniqueId().toString());
+                        return isOwner(BlockStorage.getLocationInfo(b.getLocation(), "owner"), p.getUniqueId());
                     default:
                         return Slimefun.getProtectionManager().hasPermission(p, b, Interaction.INTERACT_BLOCK);
                 }
@@ -92,13 +97,8 @@ public class SlimefunChest extends SlimefunItem {
 
                 if (allow) {
                     BlockMenu inv = BlockStorage.getInventory(b);
-
-                    for (int slot = 0; slot < size; slot++) {
-                        ItemStack stack = inv.getItemInSlot(slot);
-
-                        if (stack != null && !stack.getType().isAir()) {
-                            b.getWorld().dropItemNaturally(b.getLocation(), stack);
-                        }
+                    for (ItemStack stack : drainChestMenu(inv, size)) {
+                        b.getWorld().dropItemNaturally(b.getLocation(), stack);
                     }
                 } else {
                     e.setCancelled(true);
@@ -108,16 +108,37 @@ public class SlimefunChest extends SlimefunItem {
             @Override
             public void onExplode(Block b, List<ItemStack> drops) {
                 BlockMenu inv = BlockStorage.getInventory(b);
-
-                for (int slot = 0; slot < size; slot++) {
-                    ItemStack stack = inv.getItemInSlot(slot);
-
-                    if (stack != null && !stack.getType().isAir()) {
-                        drops.add(stack);
-                    }
-                }
+                drops.addAll(drainChestMenu(inv, size));
             }
         };
+    }
+
+    static boolean isOwner(String ownerId, UUID playerId) {
+        return ownerId != null && playerId != null && Objects.equals(ownerId, playerId.toString());
+    }
+
+    static List<ItemStack> drainChestMenu(BlockMenu inv, int size) {
+        if (inv == null) {
+            return Collections.emptyList();
+        }
+
+        Inventory bukkitInventory = inv.toInventory();
+        if (bukkitInventory != null) {
+            for (HumanEntity viewer : new ArrayList<>(bukkitInventory.getViewers())) {
+                viewer.closeInventory();
+            }
+        }
+
+        List<ItemStack> drained = new ArrayList<>();
+        for (int slot = 0; slot < size; slot++) {
+            ItemStack stack = inv.getItemInSlot(slot);
+
+            if (stack != null && !stack.getType().isAir()) {
+                inv.replaceExistingItem(slot, null);
+                drained.add(stack);
+            }
+        }
+        return drained;
     }
 
     private int[] getSlotsArray(int size) {
