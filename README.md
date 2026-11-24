@@ -1,3 +1,9 @@
+<!-- credits:start -->
+> **Credits & license.** Port and maintenance by [JackStar6677-1](https://github.com/JackStar6677-1) and [DrakesCraft Labs](https://github.com/SlimefunNewHorizons). Original authors: [TheBusyBiscuit](https://github.com/TheBusyBiscuit), [JackStar6677](https://github.com/JackStar6677), [renovate-bot](https://github.com/renovate-bot), [LinoxGH](https://github.com/LinoxGH), [variananora](https://github.com/variananora), [ybw0014](https://github.com/ybw0014), JackStar (plugin.yml). Upstream license: **MIT License** (see [LICENSE](LICENSE)). Details: [docs/UPSTREAM_ATTRIBUTION.md](docs/UPSTREAM_ATTRIBUTION.md) · Policy: [Rights & Attribution](https://github.com/SlimefunNewHorizons/.github/blob/main/RIGHTS_AND_ATTRIBUTION.md). Independent community project, not affiliated with or endorsed by the original authors or the official Slimefun team.
+>
+> **Créditos y licencia.** Port y mantenimiento por [JackStar6677-1](https://github.com/JackStar6677-1) y [DrakesCraft Labs](https://github.com/SlimefunNewHorizons). Autores originales: [TheBusyBiscuit](https://github.com/TheBusyBiscuit), [JackStar6677](https://github.com/JackStar6677), [renovate-bot](https://github.com/renovate-bot), [LinoxGH](https://github.com/LinoxGH), [variananora](https://github.com/variananora), [ybw0014](https://github.com/ybw0014), JackStar (plugin.yml). Licencia original: **MIT License**. Detalle en [docs/UPSTREAM_ATTRIBUTION.md](docs/UPSTREAM_ATTRIBUTION.md).
+<!-- credits:end -->
+
 <div align="center">
 
   <img src="https://raw.githubusercontent.com/SlimefunNewHorizons/PrivateStorage/main/banner.svg" alt="PrivateStorage Banner" width="920" />
